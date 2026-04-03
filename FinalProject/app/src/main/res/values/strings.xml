@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FinalProject</string>
+
+    <string name="etTitle">Barberos Service</string>
+    <string name="tvEmailLabel">Correo electrónico</string>
+    <string name="eteEmailLogin">correo@gmail.com</string>
+    <string name="tvPasswordLabel">Contraseña</string>
+    <string name="etpPasswordLogin">Password</string>
+    <string name="btnLogin">Iniciar sesión</string>
+    <string name="btnRegister">Registrarse</string>
+
+</resources>
