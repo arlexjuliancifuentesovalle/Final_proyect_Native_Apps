@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuPagos"
+        android:title="@string/menuPagos"
+        android:icon="@drawable/pagos" />
+
+    <item
+        android:id="@+id/menuBarberos"
+        android:title="@string/menuBarberos"
+        android:icon="@drawable/barberos" />
+
+    <item
+        android:id="@+id/menuClientes"
+        android:title="@string/menuClientes"
+        android:icon="@drawable/clientes" />
+
+</menu>
