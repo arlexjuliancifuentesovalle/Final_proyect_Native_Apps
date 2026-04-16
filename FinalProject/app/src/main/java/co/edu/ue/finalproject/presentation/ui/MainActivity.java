@@ -20,6 +20,7 @@ import co.edu.ue.finalproject.data.remote.FireBaseService;
 import co.edu.ue.finalproject.data.repository.AuthRepositoryImpl;
 import co.edu.ue.finalproject.domain.repository.AuthRepository;
 import co.edu.ue.finalproject.domain.usecase.LoginUseCase;
+import co.edu.ue.finalproject.domain.usecase.RegisterUseCase;
 import co.edu.ue.finalproject.presentation.viewmodel.LoginViewModel;
 import co.edu.ue.finalproject.presentation.viewmodel.ViewModelFactory;
 
@@ -67,9 +68,10 @@ public class MainActivity extends AppCompatActivity {
         FireBaseService fireBaseService = new FireBaseService();
         AuthRepository repository = new AuthRepositoryImpl(fireBaseService);
         LoginUseCase loginUseCase = new LoginUseCase(repository);
+        RegisterUseCase registerUseCase = new RegisterUseCase(repository);
         
         // Creamos una fábrica para poder darle el "Caso de Uso" a nuestro ViewModel.
-        ViewModelFactory factory = new ViewModelFactory(loginUseCase);
+        ViewModelFactory factory = new ViewModelFactory(loginUseCase, registerUseCase);
         
         // Obtenemos el ViewModel, que es el encargado de procesar el login.
         viewModel = new ViewModelProvider(this, factory).get(LoginViewModel.class);
@@ -118,7 +120,9 @@ public class MainActivity extends AppCompatActivity {
 
     // Este método nos llevará a la pantalla de creación de cuenta.
     private void navigateToRegister() {
-        // Cuando crees tu pantalla de registro, aquí pondrás el código para abrirla.
+        // This represent now activity
+        Intent register = new Intent(this, RegisterActivity.class);
+        startActivity(register);
         Toast.makeText(this, "Abriendo formulario de registro...", Toast.LENGTH_SHORT).show();
     }
 

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">FinalProject</string>
 
-    <string name="etTitle">Barberos Service</string>
+    <string name="etTitle">Barber Service</string>
     <string name="tvEmailLabel">Correo electrónico</string>
     <string name="eteEmailLogin">correo@gmail.com</string>
     <string name="tvPasswordLabel">Contraseña</string>
@@ -9,4 +9,11 @@
     <string name="btnLogin">Iniciar sesión</string>
     <string name="btnRegister">Registrarse</string>
 
+    <string name="tvTittleRegister_Register">Barber Service</string>
+    <string name="tvRegister_Register">Registrarse</string>
+    <string name="tvEmail_Register">Ingresa tu correo electrónico</string>
+    <string name="EtEmail_Register">Ejm Cristian123@gmail.com</string>
+    <string name="tvUserName_Register">Ingresa tu nombre de usuario</string>
+    <string name="tvPassword_Register">Contraseña</string>
+    <string name="EtPassword_Register">********</string>
 </resources>

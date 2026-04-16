@@ -18,6 +18,9 @@ public interface AuthRepository {
         void onError(String message); // Se llama si hubo un error (y nos dice cuál).
     }
 
+    // Tarea: Intentar registrar con usuario correo y clave.
+    void register(String userName_Register ,String email_Register, String password_Register, AuthCallback callback);
+
     // Tarea: Intentar entrar con correo y clave.
     void login(String email, String password, AuthCallback callback);
     

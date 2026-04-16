@@ -1,8 +1,14 @@
 package co.edu.ue.finalproject.data.repository;
 
+import android.widget.Toast;
+
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+
 import co.edu.ue.finalproject.data.remote.FireBaseService;
 import co.edu.ue.finalproject.domain.repository.AuthRepository;
+
+
 
 /**
  * Esta es la implementación real de nuestro "Contrato" (AuthRepository).
@@ -15,6 +21,48 @@ public class AuthRepositoryImpl implements AuthRepository {
     public AuthRepositoryImpl(FireBaseService firebaseService) {
         this.firebaseService = firebaseService;
     }
+
+
+    @Override
+    public void register(String userName_Register, String email_Register, String password_Register, AuthCallback callback) {
+        //Validate not empty data
+        if (userName_Register.isEmpty() || email_Register.isEmpty() || password_Register.isEmpty()) {
+            callback.onError("Tienes que completar todos los datos para poder continuar");
+            return;
+        }
+
+        //Call firebase for register
+        firebaseService.getAuth().createUserWithEmailAndPassword(email_Register, password_Register)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        FirebaseUser user = firebaseService.getAuth().getCurrentUser();
+                        if (user != null) {
+                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(userName_Register)
+                                    .build();
+
+                            user.updateProfile(profileUpdates).addOnCompleteListener(taskProfile -> {
+                                if (taskProfile.isSuccessful()) {
+                                    callback.onSuccess();
+                                } else {
+                                    callback.onError("Usuario creado, pero falló al guardar el nombre.");
+                                }
+                            });
+                        }
+                    } else {
+                        Exception e = task.getException();
+                        String errorMessage = "Error al registrarse";
+
+                        if (e instanceof com.google.firebase.auth.FirebaseAuthUserCollisionException) {
+                            callback.onError("email ya fue registrado.");
+                        } else if (e != null) {
+                            errorMessage = e.getMessage();
+                        }
+                        callback.onError(errorMessage);
+                    }
+                });
+    }
+
 
     @Override
     public void login(String email, String password, AuthCallback callback) {
