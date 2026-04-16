@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "910684150255",
+    "project_id": "barberiaproject-appnativas-ue",
+    "storage_bucket": "barberiaproject-appnativas-ue.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910684150255:android:54874b2ec01e0dd256be1a",
+        "android_client_info": {
+          "package_name": "co.edu.ue.finalproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKtRqoqimiJOz6Q5A_Elx2ayvzv9eE8BM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
