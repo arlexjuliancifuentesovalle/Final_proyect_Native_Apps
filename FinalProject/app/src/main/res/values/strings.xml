@@ -16,16 +16,6 @@
     <string name="tvUserName_Register">Ingresa tu nombre de usuario</string>
     <string name="tvPassword_Register">Contraseña</string>
     <string name="EtPassword_Register">********</string>
-
-    <!--Las opciones del menu-->
-    <string name="menuPagos">pagos</string>
-    <string name="menuBarberos">Barberos</string>
-    <string name="menuClientes">Clientes</string>
-
-    <!--Los de tipos de servicios-->
-    <string name="etTitlePagos">Tipos de Pagos</string>
-
-
-
-
+    <string name="btnVolver_Register">Iniciar sesión</string>
+    <string name="YaCuenta">¿Ya tienes cuenta?</string>
 </resources>

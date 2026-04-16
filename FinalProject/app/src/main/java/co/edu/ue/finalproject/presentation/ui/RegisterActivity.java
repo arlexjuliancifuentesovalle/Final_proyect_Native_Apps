@@ -29,6 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText etEmail_Register;
     private EditText etPassword_Register;
     private Button btnRegister;
+    private Button btnVolver;
     private RegisterViewModel viewModel;
 
 
@@ -78,6 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
         etEmail_Register = findViewById(R.id.etEmail);
         etPassword_Register = findViewById(R.id.etPassword);
         btnRegister = findViewById(R.id.btnRegister_Register);
+        btnVolver = findViewById(R.id.btnVolver_Register);
     }
 
     private void setupObservers() {
@@ -90,11 +92,15 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(this, "¡Bienvenido! ahora puedes iniciar sesión.", Toast.LENGTH_SHORT).show();
             }
         });
+
+
         viewModel.errorMessage.observe(this, message -> {
             if (message != null && !message.isEmpty()) {
                 Toast.makeText(this, message, Toast.LENGTH_LONG).show();
             }
         });
+
+
     }
 
     private void setupListeners(){
@@ -106,5 +112,9 @@ public class RegisterActivity extends AppCompatActivity {
 
             viewModel.register(username, email, password);
         });
+        btnVolver.setOnClickListener(v -> finish());
     }
+
+
+
 }
