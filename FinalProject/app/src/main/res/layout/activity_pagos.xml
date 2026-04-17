@@ -14,10 +14,11 @@
         android:layout_height="45dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:textSize="40sp"
-        android:text="@string/etTitlePagos" />
+        android:text="@string/etTitlePagos"
+        android:textSize="40sp" />
 
     <ListView
+        android:id="@+id/lvPagos"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

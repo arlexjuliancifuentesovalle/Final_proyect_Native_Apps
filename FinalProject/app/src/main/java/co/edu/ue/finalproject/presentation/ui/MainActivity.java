@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         RegisterUseCase registerUseCase = new RegisterUseCase(repository);
         
         // Creamos una fábrica para poder darle el "Caso de Uso" a nuestro ViewModel.
-        ViewModelFactory factory = new ViewModelFactory(loginUseCase, registerUseCase);
+        ViewModelFactory factory = new ViewModelFactory(loginUseCase, registerUseCase, null);
         
         // Obtenemos el ViewModel, que es el encargado de procesar el login.
         viewModel = new ViewModelProvider(this, factory).get(LoginViewModel.class);
@@ -111,11 +111,9 @@ public class MainActivity extends AppCompatActivity {
 
     // Este método se encargará de llevarnos a la pantalla de Inicio después del login.
     private void navigateToHome() {
-        // Por ahora solo muestra un mensaje, pero aquí pondrás el código para saltar de pantalla.
-        // Intent intent = new Intent(this, HomeActivity.class);
-        // startActivity(intent);
-        // finish(); // Cerramos el login para que no pueda volver atrás.
-        Toast.makeText(this, "Cambiando a la pantalla principal...", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent);
+        finish(); // Cerramos el login para que no pueda volver atrás.
     }
 
     // Este método nos llevará a la pantalla de creación de cuenta.
