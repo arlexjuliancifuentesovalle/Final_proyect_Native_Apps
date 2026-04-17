@@ -42,10 +42,10 @@ public class NoRedActivity extends AppCompatActivity {
 
     private boolean hayInternet() {
 
-        ConnectivityManager cm =
+        ConnectivityManager red =
                 (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
-        NetworkInfo networkInfo = cm.getActiveNetworkInfo();
+        NetworkInfo networkInfo = red.getActiveNetworkInfo();
 
         return networkInfo != null && networkInfo.isConnected();
     }
