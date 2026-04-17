@@ -51,7 +51,7 @@
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:padding="10dp"
-            android:background=""
+            android:background="@drawable/bg_border"
             android:textColor="@color/gris_oscuro"
             android:textColorHint="@color/gris_oscuro"
             android:textAlignment="center"
