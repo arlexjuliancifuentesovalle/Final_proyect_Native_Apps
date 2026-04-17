@@ -36,4 +36,9 @@ public class RetrofitCliente {
         if (retrofit == null) initRetrofit();
         return retrofit.create(UserApiService.class);
     }
+
+    public static ServicioApiService getServicioApiService() {
+        if (retrofit == null) initRetrofit();
+        return retrofit.create(ServicioApiService.class);
+    }
 }

@@ -24,10 +24,12 @@
     <string name="menuTurnos">Turnos</string>
     <string name="menuBarberos">Barberos</string>
     <string name="menuClientes">Clientes</string>
+    <string name="menuServicios">Servicios</string>
 
     <string name="etTitlePagos">Tipos de pagos</string>
     <string name="etTitleTurnos">Turnos</string>
     <string name="etTitleClientes">Clientes</string>
+    <string name="etTitleServicios">Servicios</string>
 
     <string name="tvNoInternetTitle">No tienes red</string>
     <string name="tvNoInternetMensaje">En este momento no se detecto ninguna red disponible \n intenta de nuevo cuando tengas una conexion estable.</string>

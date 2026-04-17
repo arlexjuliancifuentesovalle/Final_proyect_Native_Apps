@@ -39,4 +39,5 @@ public class TurnoDTO {
 
         public String getTipuTipoUsuario() { return tipuTipoUsuario; }
     }
+
 }

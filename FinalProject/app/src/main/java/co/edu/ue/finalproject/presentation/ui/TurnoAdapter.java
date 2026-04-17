@@ -1,12 +1,17 @@
 package co.edu.ue.finalproject.presentation.ui;
 
 import android.content.Context;
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 import co.edu.ue.finalproject.data.model.TurnoDTO;
 
@@ -39,4 +44,5 @@ public class TurnoAdapter extends ArrayAdapter<TurnoDTO> {
 
         return convertView;
     }
+
 }

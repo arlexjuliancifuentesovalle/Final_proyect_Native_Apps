@@ -51,8 +51,8 @@ public class TurnoFragment extends Fragment {
         TurnosApiService apiService = RetrofitCliente.getTurnosApiService();
         TurnoRepository repository = new TurnoRepositoryImpl(apiService);
         ObtenerTurnosUseCase useCaseTurnos = new ObtenerTurnosUseCase(repository);
-        // Agregamos el quinto parámetro null
-        ViewModelFactory factory = new ViewModelFactory(null, null, null, useCaseTurnos, null);
+        // Agregamos el sexto parámetro null
+        ViewModelFactory factory = new ViewModelFactory(null, null, null, useCaseTurnos, null, null);
         viewModel = new ViewModelProvider(this, factory).get(TurnoViewModel.class);
     }
 

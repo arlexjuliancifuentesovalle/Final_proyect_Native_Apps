@@ -16,4 +16,9 @@
         android:title="@string/menuClientes"
         android:icon="@drawable/clientes" />
 
+    <item
+        android:id="@+id/menuServicios"
+        android:title="@string/menuServicios"
+        android:icon="@drawable/barberos" />
+
 </menu>

@@ -10,7 +10,4 @@ import retrofit2.http.GET;
 public interface PagosApiService {
     @GET("api/Tip-pagos")
     Call<List<PagosDTO>> obtenerPagos();
-
-    @GET("api/shift")
-    Call<List<TurnoDTO>> obtenerTurnos();
 }

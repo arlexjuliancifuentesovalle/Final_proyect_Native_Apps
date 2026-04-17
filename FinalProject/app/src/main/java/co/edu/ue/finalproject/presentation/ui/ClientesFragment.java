@@ -51,7 +51,7 @@ public class ClientesFragment extends Fragment {
         UserRepository repository = new UserRepositoryImpl(apiService);
         ObtenerUsuariosUseCase useCase = new ObtenerUsuariosUseCase(repository);
         
-        ViewModelFactory factory = new ViewModelFactory(null, null, null, null, useCase);
+        ViewModelFactory factory = new ViewModelFactory(null, null, null, null, useCase, null);
         viewModel = new ViewModelProvider(this, factory).get(UserViewModel.class);
     }
 

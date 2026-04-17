@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider;
 import co.edu.ue.finalproject.domain.usecase.LoginUseCase;
 import co.edu.ue.finalproject.domain.usecase.ObtenerPagosUseCase;
 import co.edu.ue.finalproject.domain.usecase.ObtenerTurnosUseCase;
+import co.edu.ue.finalproject.domain.usecase.ObtenerServiciosUseCase;
 import co.edu.ue.finalproject.domain.usecase.ObtenerUsuariosUseCase;
 import co.edu.ue.finalproject.domain.usecase.RegisterUseCase;
 
@@ -16,16 +17,17 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
     private final ObtenerPagosUseCase obtenerPagosUseCase;
     private final ObtenerTurnosUseCase obtenerTurnosUseCase;
     private final ObtenerUsuariosUseCase obtenerUsuariosUseCase;
+    private final ObtenerServiciosUseCase obtenerServiciosUseCase;
 
-
-    public ViewModelFactory(LoginUseCase loginUseCase, RegisterUseCase registerUseCase, 
+    public ViewModelFactory(LoginUseCase loginUseCase, RegisterUseCase registerUseCase,
                             ObtenerPagosUseCase obtenerPagosUseCase, ObtenerTurnosUseCase obtenerTurnosUseCase,
-                            ObtenerUsuariosUseCase obtenerUsuariosUseCase) {
+                            ObtenerUsuariosUseCase obtenerUsuariosUseCase, ObtenerServiciosUseCase obtenerServiciosUseCase) {
         this.loginUseCase = loginUseCase;
         this.registerUseCase = registerUseCase;
         this.obtenerPagosUseCase = obtenerPagosUseCase;
         this.obtenerTurnosUseCase = obtenerTurnosUseCase;
         this.obtenerUsuariosUseCase = obtenerUsuariosUseCase;
+        this.obtenerServiciosUseCase = obtenerServiciosUseCase;
     }
 
     @NonNull
@@ -42,6 +44,8 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
             return (T) new TurnoViewModel(obtenerTurnosUseCase);
         } else if (modelClass.isAssignableFrom(UserViewModel.class)) {
             return (T) new UserViewModel(obtenerUsuariosUseCase);
+        } else if (modelClass.isAssignableFrom(ServicioViewModel.class)) {
+            return (T) new ServicioViewModel(obtenerServiciosUseCase);
         }
         throw new IllegalArgumentException("Unknown ViewModel class");
     }
