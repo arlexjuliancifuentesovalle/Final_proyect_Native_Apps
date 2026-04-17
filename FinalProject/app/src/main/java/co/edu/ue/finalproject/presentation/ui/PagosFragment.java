@@ -52,8 +52,8 @@ public class PagosFragment extends Fragment {
         PagosApiService apiService = RetrofitCliente.getApiService();
         PagosRepository repository = new PagosRepositoryImpl(apiService);
         ObtenerPagosUseCase useCase = new ObtenerPagosUseCase(repository);
-        // Agregamos el cuarto parámetro null para el caso de uso de turnos
-        ViewModelFactory factory = new ViewModelFactory(null, null, useCase, null);
+        // Agregamos el quinto parámetro null
+        ViewModelFactory factory = new ViewModelFactory(null, null, useCase, null, null);
         viewModel = new ViewModelProvider(this, factory).get(PagosViewModel.class);
     }
 

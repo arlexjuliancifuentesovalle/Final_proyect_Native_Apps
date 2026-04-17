@@ -68,8 +68,8 @@ public class RegisterActivity extends AppCompatActivity {
         RegisterUseCase registerUseCase = new RegisterUseCase(repository);
 
         // Creamos una fábrica para poder darle el "Caso de Uso" a nuestro ViewModel.
-        // Agregamos el cuarto parámetro null para el caso de uso de turnos
-        ViewModelFactory factory = new ViewModelFactory(loginUseCase, registerUseCase, null, null);
+        // Agregamos el quinto parámetro null
+        ViewModelFactory factory = new ViewModelFactory(loginUseCase, registerUseCase, null, null, null);
 
         // Obtenemos el ViewModel, que es el encargado de procesar el login.
         viewModel = new ViewModelProvider(this, factory).get(RegisterViewModel.class);
