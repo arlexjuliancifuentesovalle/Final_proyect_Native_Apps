@@ -6,18 +6,22 @@ import androidx.lifecycle.ViewModelProvider;
 
 import co.edu.ue.finalproject.domain.usecase.LoginUseCase;
 import co.edu.ue.finalproject.domain.usecase.ObtenerPagosUseCase;
+import co.edu.ue.finalproject.domain.usecase.ObtenerTurnosUseCase;
 import co.edu.ue.finalproject.domain.usecase.RegisterUseCase;
 
 public class ViewModelFactory implements ViewModelProvider.Factory {
     private final LoginUseCase loginUseCase;
     private final RegisterUseCase registerUseCase;
     private final ObtenerPagosUseCase obtenerPagosUseCase;
+    private final ObtenerTurnosUseCase obtenerTurnosUseCase;
 
 
-    public ViewModelFactory(LoginUseCase loginUseCase, RegisterUseCase registerUseCase, ObtenerPagosUseCase obtenerPagosUseCase) {
+    public ViewModelFactory(LoginUseCase loginUseCase, RegisterUseCase registerUseCase, 
+                            ObtenerPagosUseCase obtenerPagosUseCase, ObtenerTurnosUseCase obtenerTurnosUseCase) {
         this.loginUseCase = loginUseCase;
         this.registerUseCase = registerUseCase;
         this.obtenerPagosUseCase = obtenerPagosUseCase;
+        this.obtenerTurnosUseCase = obtenerTurnosUseCase;
     }
 
     @NonNull
@@ -30,6 +34,8 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
             return (T) new RegisterViewModel(registerUseCase);
         } else if (modelClass.isAssignableFrom(PagosViewModel.class)) {
             return (T) new PagosViewModel(obtenerPagosUseCase);
+        } else if (modelClass.isAssignableFrom(TurnoViewModel.class)) {
+            return (T) new TurnoViewModel(obtenerTurnosUseCase);
         }
         throw new IllegalArgumentException("Unknown ViewModel class");
     }

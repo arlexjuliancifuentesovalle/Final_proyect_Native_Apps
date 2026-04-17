@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
         LoginUseCase loginUseCase = new LoginUseCase(null);
         RegisterUseCase registerUseCase = new RegisterUseCase(null);
 
-        // null como tercer parámetro
-        // porque MainActivity no necesita el caso de uso de Pagos
-        ViewModelFactory factory = new ViewModelFactory(loginUseCase, registerUseCase, null);
+        // null como tercer y cuarto parámetro
+        // porque MainActivity no necesita los casos de uso de Pagos o Turnos
+        ViewModelFactory factory = new ViewModelFactory(loginUseCase, registerUseCase, null, null);
 
         // Obtener el ViewModel
         loginViewModel = new ViewModelProvider(this, factory).get(LoginViewModel.class);

@@ -29,9 +29,8 @@ public class MenuActivity extends AppCompatActivity {
 
             if (itemId == R.id.menuPagos) {
                 fragment = new PagosFragment();
-            } else if (itemId == R.id.menuBarberos) {
-                // fragment = new BarberosFragment();
-                return true;
+            } else if (itemId == R.id.menuTurnos) {
+                fragment = new TurnoFragment();
             } else if (itemId == R.id.menuClientes) {
                 // fragment = new ClientesFragment();
                 return true;

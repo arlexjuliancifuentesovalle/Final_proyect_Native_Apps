@@ -7,9 +7,9 @@
         android:icon="@drawable/pagos" />
 
     <item
-        android:id="@+id/menuBarberos"
-        android:title="@string/menuBarberos"
-        android:icon="@drawable/barberos" />
+        android:id="@+id/menuTurnos"
+        android:title="@string/menuTurnos"
+        android:icon="@drawable/turnos" />
 
     <item
         android:id="@+id/menuClientes"
