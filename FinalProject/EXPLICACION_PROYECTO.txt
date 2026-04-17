@@ -1,0 +1,37 @@
+ESTRUCTURA Y EXPLICACIÓN DEL PROYECTO - FINAL PROJECT
+
+Este proyecto sigue una arquitectura de Clean Architecture (Arquitectura Limpia), la cual divide el código en capas para que sea más fácil de mantener, testear y escalar.
+
+1. CAPA DE PRESENTACIÓN (presentation)
+Esta capa se encarga de todo lo que el usuario ve e interactúa.
+- ui: Contiene las Activities y Fragments (las pantallas). Define la interfaz de usuario mediante archivos XML y maneja los eventos táctiles.
+- viewmodel: Actúa como puente entre la interfaz de usuario y la lógica de negocio. Mantiene el estado de la pantalla y sobrevive a cambios de configuración (como rotar el teléfono).
+
+2. CAPA DE DOMINIO (domain)
+Es el corazón de la aplicación y es independiente de cualquier librería externa (como Firebase o Retrofit).
+- model: Define las entidades de negocio (objetos puros como Usuario, Barbero, etc.).
+- repository: Define interfaces que especifican QUÉ acciones se pueden realizar (ej: login, obtener lista), pero no CÓMO se hacen.
+- usecase: Contiene la lógica de negocio específica para cada acción del usuario (ej: RegisterUseCase, CheckSessionUseCase).
+
+3. CAPA DE DATOS (data)
+Se encarga de CÓMO se obtienen los datos. Implementa las interfaces definidas en la capa de dominio.
+- remote: Maneja las conexiones externas. En este proyecto se usa FireBaseService para interactuar con los servicios de Google (Auth y Firestore).
+- repository: Aquí están las implementaciones reales (AuthRepositoryImpl, BarberRepositoryImpl). Deciden si los datos vienen de la red o de una base de datos local.
+- DataBaseHelper.java: Maneja la persistencia local, posiblemente usando SQLite.
+
+4. UTILIDADES Y CONFIGURACIÓN
+- util: Contiene clases de ayuda que se usan en todo el proyecto (ej: validaciones, formateo de fechas).
+- MainActivity: El punto de entrada principal de la aplicación.
+- AndroidManifest.xml: Archivo de configuración donde se declaran permisos (Internet), actividades y servicios.
+- res (Resources): Contiene layouts (XML), drawables (imágenes y formas como los bordes redondeados) y strings (textos multilenguaje).
+
+TECNOLOGÍAS UTILIZADAS:
+- Firebase: Para autenticación de usuarios y base de datos en tiempo real (Firestore).
+- Clean Architecture: Para una separación clara de responsabilidades.
+- Material Design: Para una interfaz de usuario moderna y profesional.
+- Retrofit/Gson: Para consumo de APIs externas y manejo de JSON (si aplica).
+- Kotlin/Java: Lenguajes principales de desarrollo.
+
+---
+Resumen para la explicación:
+"El proyecto está organizado para que la lógica de negocio (Dominio) no dependa de si usamos Firebase o una base de datos local (Datos). La interfaz (Presentación) solo habla con los casos de uso a través de los ViewModels, asegurando que el código sea limpio y profesional."
