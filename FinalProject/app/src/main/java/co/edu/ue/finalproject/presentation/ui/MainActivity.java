@@ -2,7 +2,10 @@ package co.edu.ue.finalproject.presentation.ui;
 
 // Estas son las "herramientas" que importamos para que nuestra app funcione.
 // Por ejemplo, para usar botones, textos, o conectarnos con Firebase.
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -118,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Este método nos llevará a la pantalla de creación de cuenta.
     private void navigateToRegister() {
-        // This represent now activity
+        // This represents now activity
         Intent register = new Intent(this, RegisterActivity.class);
         startActivity(register);
         Toast.makeText(this, "Abriendo formulario de registro...", Toast.LENGTH_SHORT).show();
@@ -129,6 +132,15 @@ public class MainActivity extends AppCompatActivity {
         
         // Cuando el usuario toca el botón de Login:
         btnLogin.setOnClickListener(v -> {
+
+            //Validación de red
+            if (!hayInternet()) {
+                Intent noRed = new Intent(this, NoRedActivity.class);
+                startActivity(noRed);
+                Toast.makeText(this, "No hay conexión a internet", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             // Sacamos el texto que escribió el usuario en los cuadros.
             String email = etEmail.getText().toString().trim();
             String password = etPassword.getText().toString().trim();
@@ -141,5 +153,11 @@ public class MainActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(v -> {
             navigateToRegister(); // Llamamos a la función de navegar.
         });
+    }
+
+    private boolean hayInternet() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = cm.getActiveNetworkInfo();
+        return networkInfo != null && networkInfo.isConnected();
     }
 }

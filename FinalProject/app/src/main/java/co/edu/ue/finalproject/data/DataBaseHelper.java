@@ -52,4 +52,22 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return result != -1;
     }
 
+    public boolean loginUser(String email, String password){
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_USERS +
+                " WHERE " + COLUMN_EMAIL + "=? AND " + COLUMN_PASSWORD + "=?";
+
+        android.database.Cursor cursor = db.rawQuery(query, new String[]{email, password});
+
+        if(cursor.getCount() > 0){
+            cursor.close();
+            return true;
+        } else {
+            cursor.close();
+            return false;
+        }
+    }
+
 }

@@ -87,23 +87,46 @@ public class AuthRepositoryImpl implements AuthRepository {
 
     @Override
     public void login(String email, String password, AuthCallback callback) {
-        // Primero revisamos que no nos hayan pasado datos vacíos.
+
+        // Validar campos vacíos
         if (email == null || email.isEmpty() || password == null || password.isEmpty()) {
             callback.onError("El correo y la clave no pueden estar vacíos");
             return;
         }
 
-        // Le pedimos a Firebase que intente iniciar sesión con el correo y clave.
+        // Verificar conexión a internet
+        android.net.ConnectivityManager red =
+                (android.net.ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        android.net.NetworkInfo activeNetwork = red.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null && activeNetwork.isConnected();
+
+        // No Red usar SqLite para ingresar
+        if (!isConnected) {
+
+            boolean exists = dataBaseHelper.loginUser(email, password);
+
+            if (exists) {
+                callback.onSuccess();
+            } else {
+                callback.onError("Usuario no encontrado en modo offline");
+            }
+
+            return;
+        }
+
+        // Firebase si hay red y se puede acceder
         firebaseService.getAuth().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
-                    // Cuando Firebase termina, revisamos si le fue bien o mal.
+
                     if (task.isSuccessful()) {
-                        // ¡Éxito! Avisamos al mensajero.
                         callback.onSuccess();
                     } else {
-                        // Error. Sacamos el mensaje de por qué falló (ej: clave incorrecta).
-                        String errorMessage = task.getException() != null ? 
-                                task.getException().getMessage() : "Fallo en la autenticación";
+
+                        String errorMessage = task.getException() != null ?
+                                task.getException().getMessage() :
+                                "Fallo en la autenticación";
+
                         callback.onError(errorMessage);
                     }
                 });

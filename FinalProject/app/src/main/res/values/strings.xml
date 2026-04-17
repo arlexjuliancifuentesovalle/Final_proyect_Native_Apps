@@ -20,24 +20,16 @@
     <string name="btnVolver">Iniciar sesión</string>
     <string name="YaCuenta">¿Ya tienes cuenta?</string>
 
-<<<<<<< Updated upstream
-
-    <string name="etTitlePagos">Pagos</string>
-    <string name="menuPagos">Pagos</string>
-    <string name="menuBarberos">Barberos</string>
-    <string name="menuClientes">Clientes</string>
-=======
-    <!-- Menu -->
     <string name="menuPagos">Tipos de pagos</string>
     <string name="menuTurnos">Turnos</string>
+    <string name="menuBarberos">Barberos</string>
     <string name="menuClientes">Clientes</string>
 
-
-
-    <!-- Tipos de pagos -->
     <string name="etTitlePagos">Tipos de pagos</string>
-    <!-- Turnos -->
     <string name="etTitleTurnos">Turnos</string>
 
->>>>>>> Stashed changes
+    <string name="tvNoInternetTitle">No tienes red</string>
+    <string name="tvNoInternetMensaje">En este momento no se detecto ninguna red disponible \n intenta de nuevo cuando tengas una conexion estable.</string>
+    <string name="btnReintentar">Reintentar</string>
+
 </resources>
