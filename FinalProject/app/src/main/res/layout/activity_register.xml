@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gris_azulado"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".presentation.ui.RegisterActivity">
 
     <com.google.android.material.card.MaterialCardView
@@ -18,16 +19,14 @@
         app:cardCornerRadius="24dp"
         app:cardElevation="6dp"
         app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:cardUseCompatPadding="true">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="645dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
             android:padding="3dp">
-
 
             <TextView
                 android:id="@+id/tvTittleRegister"
@@ -36,10 +35,7 @@
                 android:layout_marginTop="56dp"
                 android:text="@string/tvTittleRegister_Register"
                 android:textColor="@color/black"
-                android:textSize="40sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/tvRegister"
@@ -48,10 +44,7 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/tvRegister_Register"
                 android:textColor="@color/black"
-                android:textSize="27sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTittleRegister" />
+                android:textSize="27sp" />
 
             <TextView
                 android:id="@+id/tvUserName"
@@ -60,28 +53,22 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/tvUserName_Register"
                 android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/etUserName"
-                android:autofillHints="username"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginHorizontal="32dp"
                 android:layout_marginTop="8dp"
+                android:autofillHints="username"
                 android:background="@drawable/bg_border"
                 android:hint="@string/tvUserName_Register"
-                android:textColorHint="@color/gris_oscuro"
-                android:textColor="@color/gris_oscuro"
                 android:inputType="textPersonName"
                 android:padding="10dp"
                 android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
+                android:textColor="@color/gris_oscuro"
+                android:textColorHint="@color/gris_oscuro" />
 
             <TextView
                 android:id="@+id/tvEmail"
@@ -90,29 +77,21 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/tvEmail_Register"
                 android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etUserName" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/etEmail"
-                android:autofillHints="emailAddress"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginHorizontal="32dp"
                 android:layout_marginTop="8dp"
+                android:autofillHints="emailAddress"
                 android:background="@drawable/bg_border"
                 android:hint="@string/EtEmail_Register"
-                android:textColor="@color/gris_oscuro"
-                android:textColorHint="@color/gris_oscuro"
-
-
                 android:inputType="textEmailAddress"
                 android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+                android:textColor="@color/gris_oscuro"
+                android:textColorHint="@color/gris_oscuro" />
 
             <TextView
                 android:id="@+id/tvPassword"
@@ -121,74 +100,60 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/tvPassword_Register"
                 android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/etPassword"
-                android:autofillHints="password"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginHorizontal="32dp"
                 android:layout_marginTop="8dp"
+                android:autofillHints="password"
                 android:background="@drawable/bg_border"
                 android:hint="@string/EtPassword_Register"
                 android:inputType="textPassword"
-                android:textColorHint="@color/gris_oscuro"
-                android:textColor="@color/gris_oscuro"
                 android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
+                android:textColor="@color/gris_oscuro"
+                android:textColorHint="@color/gris_oscuro" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnRegister_Register"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginStart="32dp"
+                android:layout_marginHorizontal="32dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginEnd="32dp"
-                android:drawableBottom="@drawable/bg_border"
                 android:text="@string/btnRegister"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:backgroundTint="@color/material_dynamic_neutral_variant10"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+                app:cornerRadius="12dp" />
 
-            <TextView
-                android:id="@+id/tvYaCuenta"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/YaCuenta"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@+id/btnVolver_Register"
-                app:layout_constraintEnd_toStartOf="@+id/btnVolver_Register"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/btnVolver_Register" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnVolver_Register"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="@string/btnLogin"
-                android:textColor="@color/azul_oscuro"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tvYaCuenta"
-                app:layout_constraintTop_toBottomOf="@+id/btnRegister_Register" />
+                <TextView
+                    android:id="@+id/tvYaCuenta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/YaCuenta"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnVolver_Register"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/btnLogin"
+                    android:textColor="@color/azul_oscuro"
+                    android:textSize="14sp" />
+            </LinearLayout>
 
+        </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

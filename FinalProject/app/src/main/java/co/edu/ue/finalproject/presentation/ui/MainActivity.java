@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     // Siguiendo el orden: Servicio de Firebase -> Repositorio -> Caso de Uso -> ViewModel.
     private void initDependencies() {
         FireBaseService fireBaseService = new FireBaseService();
-        AuthRepository repository = new AuthRepositoryImpl(fireBaseService);
+        AuthRepository repository = new AuthRepositoryImpl(fireBaseService, this);
         LoginUseCase loginUseCase = new LoginUseCase(repository);
         RegisterUseCase registerUseCase = new RegisterUseCase(repository);
         

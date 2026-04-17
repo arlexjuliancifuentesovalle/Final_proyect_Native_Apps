@@ -75,6 +75,7 @@
             android:layout_weight="1"
             android:minHeight="48dp"
             android:text="@string/btnRegister" />
+
     </LinearLayout>
 
 </LinearLayout>

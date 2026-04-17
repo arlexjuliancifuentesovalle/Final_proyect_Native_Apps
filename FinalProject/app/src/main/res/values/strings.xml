@@ -8,6 +8,7 @@
     <string name="etpPasswordLogin">Password</string>
     <string name="btnLogin">Iniciar sesión</string>
     <string name="btnRegister">Registrarse</string>
+    <string name="btnHuella">Iniciar sesión con huella</string>
 
     <string name="tvTittleRegister_Register">Barber Service</string>
     <string name="tvRegister_Register">Registrarse</string>
@@ -18,4 +19,10 @@
     <string name="EtPassword_Register">********</string>
     <string name="btnVolver">Iniciar sesión</string>
     <string name="YaCuenta">¿Ya tienes cuenta?</string>
+
+
+    <string name="etTitlePagos">Pagos</string>
+    <string name="menuPagos">Pagos</string>
+    <string name="menuBarberos">Barberos</string>
+    <string name="menuClientes">Clientes</string>
 </resources>
