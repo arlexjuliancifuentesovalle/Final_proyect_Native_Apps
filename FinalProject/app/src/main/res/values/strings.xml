@@ -18,4 +18,15 @@
     <string name="EtPassword_Register">********</string>
     <string name="btnVolver">Iniciar sesión</string>
     <string name="YaCuenta">¿Ya tienes cuenta?</string>
+
+    <!-- Menu -->
+    <string name="menuPagos">Tipos de pagos</string>
+    <string name="menuBarberos">Barberos</string>
+    <string name="menuClientes">Clientes</string>
+
+
+
+    <!-- Tipos de pagos -->
+    <string name="etTitlePagos">Tipos de pagos</string>
+
 </resources>

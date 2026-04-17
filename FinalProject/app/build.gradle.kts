@@ -45,6 +45,10 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")      // Para el Login y Registro
     implementation("com.google.firebase:firebase-firestore") // Para los servicios de la barbería
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0") //Descarga Retrofit
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation(libs.recyclerview) //adaptador que convierte JSON
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
