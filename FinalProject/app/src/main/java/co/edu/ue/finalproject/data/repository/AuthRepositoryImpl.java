@@ -1,7 +1,6 @@
 package co.edu.ue.finalproject.data.repository;
 
 import android.content.Context;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
@@ -65,7 +64,6 @@ public class AuthRepositoryImpl implements AuthRepository {
                                     );
                                     if (inserted) {
                                         callback.onSuccess();
-                                        Toast.makeText(context,"Usuario guardado en SQLite",Toast.LENGTH_SHORT).show();
                                     } else {
                                         callback.onError("Usuario creado en Firebase pero falló guardarlo en SQLite");
                                     }
