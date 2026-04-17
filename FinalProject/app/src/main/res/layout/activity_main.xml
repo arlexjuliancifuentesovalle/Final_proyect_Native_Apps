@@ -95,6 +95,7 @@
                 android:layout_weight="1"
                 android:minHeight="48dp"
                 app:cornerRadius="12dp"
+                android:textColor="@android:color/white"
                 app:backgroundTint="@color/material_dynamic_neutral_variant10"
                 android:text="@string/btnLogin" />
 
@@ -105,6 +106,7 @@
                 android:layout_weight="1"
                 android:minHeight="48dp"
                 app:cornerRadius="12dp"
+                android:textColor="@android:color/white"
                 app:backgroundTint="@color/material_dynamic_neutral_variant10"
                 android:text="@string/btnRegister" />
 
